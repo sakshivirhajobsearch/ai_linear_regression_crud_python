@@ -1,0 +1,30 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folders
+venv/
+env/
+ENV/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# SQLite database
+data.db
+
+# Logs
+*.log
+
+# Environment variables file
+.env
+
+# Jupyter notebooks checkpoints (if you add notebooks later)
+.ipynb_checkpoints/

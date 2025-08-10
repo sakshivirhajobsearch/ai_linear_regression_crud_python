@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Linear Regression CRUD</title>
+</head>
+
+<body>
+    <h1>Dataset</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>X Value</th>
+            <th>Y Value</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in dataset %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>
+                <a href="/update/{{ row[0] }}">Update</a> |
+                <a href="/delete/{{ row[0] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/add">Add New Data</a>
+    <h2>Predict Y</h2>
+    <form method="POST" action="/predict">
+        X value: <input type="number" step="any" name="x_input" required>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction is defined %}
+    <p>Predicted Y: {{ prediction }}</p>
+    {% endif %}
+</body>
+
+</html>
